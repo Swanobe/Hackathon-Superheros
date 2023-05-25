@@ -1,11 +1,8 @@
 import React from 'react';
+import { HeroGallery } from '../../components';
 
-export default function ProfilesPage () {
-
-    return (
-        <section>
-            <h2>Profiles Page</h2>
-        </section>
-    )
-}
-
+export default function ProfilesPage() {
+  return (
+    <HeroGallery />
+  )
+};

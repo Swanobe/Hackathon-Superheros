@@ -1,9 +1,12 @@
-import React from "react";
+import React from 'react';
+import { SearchWidget } from '../../components';
 
-export default function SeachPage() {
-  return (
-    <section>
-      <h2>Seach Page</h2>
-    </section>
-  );
+export default function SearchPage () {
+
+    return (
+        <section>
+            <h2>Search Page</h2>
+            <SearchWidget />
+        </section>
+    )
 }

@@ -3,12 +3,12 @@ import { HeroImage } from '../';
 import { Link } from 'react-router-dom';
 
 export default function HeroGallery() {
-    const [heros, setHeros] = useState([]);
+    const [heroes, setHeros] = useState([]);
 
     useEffect(() => {
 
         async function displayHeros() {
-            const response = await fetch ();
+            const response = await fetch ("https://pokeapi.co/api/v2/pokemon");
             const data = await response.json();
             setHeros(data);
             console.log(data);
@@ -19,17 +19,8 @@ export default function HeroGallery() {
 
 
     return (
-        <section>
-            <h2>Hero Gallery</h2>
-            <ul>
-                {heros.map(hero => (
-                    <li key={hero.id}>
-                        <Link to={`/profiles/${hero.id}`}>
-                            <HeroImage hero={hero} />
-                        </Link>
-                    </li>
-                ))}
-            </ul>
-        </section>
+        <div className='shows'>
+        {heroes.map(hero => <Link to={`${hero.id}`} key={hero.id}><HeroImage data={hero} /></Link>)}
+      </div>
     )
 }
